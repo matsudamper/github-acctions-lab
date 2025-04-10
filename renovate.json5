@@ -30,7 +30,6 @@
     // swiftlintはcustomManagerで更新するので無効化
     {
       "matchDatasources": ["docker"],
-      "matchManagers": ["github-actions", "dockerfile"],
       "matchDepNames": ["ghcr.io/realm/swiftlint"],
       "enabled": false
     }
