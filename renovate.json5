@@ -35,7 +35,7 @@
       ],
       "datasourceTemplate": "docker",
       "depNameTemplate": "{{{depName}}}",
-      "autoReplaceStringTemplate": "FROM: docker://{{{depName}}}@{{{newDigest}}} # {{{newValue}}}",
+      "autoReplaceStringTemplate": "FROM {{{depName}}}@{{{newDigest}}} # {{{newValue}}}",
     }
   ]
 }
