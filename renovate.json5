@@ -10,7 +10,7 @@
       "matchUpdateTypes": ["digest"],
       "enabled": false
     }
-  },
+  ],
   "customManagers": [
     {
       "customType": "regex",
