@@ -17,7 +17,7 @@
       "customType": "regex",
       "fileMatch": ["\\.github/workflows/.*\\.ya?ml$"],
       "matchStrings": [
-        "uses:\\s*docker://(?<depName>[^@\\s]+)@sha256:(?<digest>[0-9a-f]{64})(?:\\s*#\\s*(?<currentValue>\\S+))?"
+        "uses:\\s*docker://(?<depName>[^@\\s]+)@sha256:(?<digest>[0-9a-f]{64})(?:\\s*#\\s*tag=\"(?<currentValue>\\S+))\"?"
       ],
       "datasourceTemplate": "docker",
       "depNameTemplate": "{{{depName}}}",
