@@ -15,6 +15,16 @@
       "depNameTemplate": "{{{depName}}}",
       "autoReplaceStringTemplate": "uses: docker://{{{depName}}}@{{{newDigest}}}{{#if newValue}} # {{{newValue}}}{{/if}}"
     },
+    {
+      "customType": "regex",
+      "fileMatch": ["\\.github/workflows/.*\\.ya?ml$"],
+      "matchStrings": [
+        "uses:\\s*docker://(?<depName>[^@\\s]+)@sha256:(?<digest>[0-9a-f]{64})"
+      ],
+      "datasourceTemplate": "docker",
+      "depNameTemplate": "{{{depName}}}",
+      "autoReplaceStringTemplate": "uses: docker://{{{depName}}}@{{{newDigest}}}{{#if newValue}} # {{{newValue}}}{{/if}}"
+    },
 
     // 特定の依存に対して更新を行う
     {
@@ -38,4 +48,13 @@
       "autoReplaceStringTemplate": "FROM {{{depName}}}@{{{newDigest}}}{{#if newValue}} # {{{newValue}}}{{/if}}"
     },
   ],
+  "packageRules": [
+    // swiftlintはcustomManagerで更新するので無効化
+    {
+      "matchDatasources": ["docker"],
+      "matchManagers": ["github-actions", "dockerfile"],
+      "matchDepNames": ["ghcr.io/realm/swiftlint"],
+      "enabled": false
+    }
+  ]
 }
