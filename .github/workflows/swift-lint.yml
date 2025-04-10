@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run SwiftLint
-        uses: docker://ghcr.io/realm/swiftlint@sha256:b500fb49bbc7b752575cbb7124311686ce1055393b9e45cb63380ace67a58116 # 0.58.2
+        uses: docker://ghcr.io/realm/swiftlint@sha256:6698ced7a2a862eb1b650469bb33f566a178a99eb68f25815bf3e138fdb99457 # 0.59.0
       - name: Run SwiftLint
-        uses: docker://ghcr.io/realm/swiftlint@sha256:b500fb49bbc7b752575cbb7124311686ce1055393b9e45cb63380ace67a58116 # 0.58.2
+        uses: docker://ghcr.io/realm/swiftlint@sha256:6698ced7a2a862eb1b650469bb33f566a178a99eb68f25815bf3e138fdb99457 # 0.59.0
       - name: Run SwiftLint
         uses: docker://ghcr.io/realm/swiftlint@sha256:b500fb49bbc7b752575cbb7124311686ce1055393b9e45cb63380ace67a58116
