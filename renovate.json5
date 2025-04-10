@@ -2,11 +2,11 @@
   "extends": [
     "config:recommended",
     "docker:pinDigests",
-    "helpers:pinGitHubActionDigests"
+    "helpers:pinGitHubActionDigests",
   ],
   "customManagers": [
     {
-      "customType": "regex",
+      "customType": "github-actions-docker",
       "fileMatch": ["\\.github/workflows/.*\\.ya?ml$"],
       "matchStrings": [
         "uses:\\s*docker://(?<depName>[^@\\s]+)@sha256:(?<digest>[0-9a-f]{64})(?:\\s*#\\s*(?<currentValue>\\S+))?"
@@ -14,7 +14,8 @@
       "datasourceTemplate": "docker",
       "depNameTemplate": "{{{depName}}}",
       "versioningTemplate": "semver",
-      "autoReplaceStringTemplate": "uses: docker://{{{depName}}}@sha256:{{{digest}}} # {{{newValue}}}"
+      "autoReplaceStringTemplate": "uses: docker://{{{depName}}}@sha256:{{{digest}}} # {{{newValue}}}",
+      "branchName": "{{{branchPrefix}}}github-actions-docker-comment/{{{depNameSanitized}}}-{{{newValue}}}"
     }
   ]
 }
