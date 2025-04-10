@@ -17,7 +17,7 @@
   ],
   "packageRules": [
     {
-      "matchManagers": ["regex", "docker"],
+      "matchManagers": ["regex", "dockerfile"],
       "matchPackageNames": ["*"],
       "groupName": "{{depName}}",
     },
