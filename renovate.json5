@@ -11,7 +11,7 @@
         "uses:\\s*docker://(?<depName>[^@\\s]+)@sha256:(?<digest>[0-9a-f]{64})(?:\\s*#\\s*(?<currentValue>\\S+))?"
       ],
       "datasourceTemplate": "docker",
-      "depNameTemplate": "{{{depName}}}",
+      "depNameTemplate": "ghcr.io/realm/swiftlint",
       "autoReplaceStringTemplate": "uses: docker://{{{depName}}}@{{{newDigest}}} # {{{newValue}}}",
     },
     {
@@ -25,11 +25,4 @@
       "autoReplaceStringTemplate": "FROM {{{depName}}}@{{{newDigest}}} # {{{newValue}}}",
     }
   ],
-  "packageRules": [
-    {
-      "matchManagers": ["regex", "github-actions", "dockerfile"],
-      "matchPackageNames": ["*"],
-      "groupName": "{{depName}}",
-    },
-  ]
 }
