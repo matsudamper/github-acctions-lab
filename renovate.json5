@@ -3,6 +3,7 @@
     "config:recommended",
   ],
   "packageRules": [
+    // pinDigests=trueでnewDigestの情報を取れるようにし、digestでの更新自体はオフにする
     {
       "matchDatasources": ["docker"],
       "matchUpdateTypes": ["digest"],
