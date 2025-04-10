@@ -17,12 +17,12 @@
       "customType": "regex",
       "fileMatch": ["\\.github/workflows/.*\\.ya?ml$"],
       "matchStrings": [
-        "^(?<indent>\\s*)uses:\\s*docker://(?<depName>[^@\\s]+)@sha256:(?<digest>[0-9a-f]{64})(?:\\s*#\\s*(?<currentValue>\\S+))?"
+        "uses:\\s*docker://(?<depName>[^@\\s]+)@sha256:(?<digest>[0-9a-f]{64})(?:\\s*#\\s*(?<currentValue>\\S+))?"
       ],
       "datasourceTemplate": "docker",
       "depNameTemplate": "{{{depName}}}",
       "versioningTemplate": "semver",
-      "autoReplaceStringTemplate": "{{{indent}}}uses: docker://{{{depName}}}@sha256:{{{digest}}} # {{{newValue}}}",
+      "autoReplaceStringTemplate": "uses: docker://{{{depName}}}@sha256:{{{digest}}} # {{{newValue}}}",
     }
   ]
 }
