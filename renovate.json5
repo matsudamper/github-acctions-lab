@@ -3,6 +3,14 @@
     "config:recommended",
     "helpers:pinGitHubActionDigests",
   ],
+  "packageRules": [
+    {
+      "matchDatasources": ["docker"],
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["digest"],
+      "enabled": false
+    }
+  },
   "customManagers": [
     {
       "customType": "regex",
