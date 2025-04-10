@@ -9,8 +9,7 @@
       "matchManagers": ["github-actions"],
       "matchDatasources": ["docker"],
       "pinDigests": true,
-      // digest 更新用ブランチは “docker-digest/…” プレフィックスに
-      "branchName": "{{{branchPrefix}}}docker-digest/{{{depNameSanitized}}}"
+      "branchName": "{{{branchPrefix}}}github-actions-docker-digest/{{{depNameSanitized}}}"
     }
   ],
   "customManagers": [
