@@ -19,7 +19,7 @@
     {
       "matchManagers": ["regex", "dockerfile", "docker"],
       "matchPackageNames": ["*"],
-      "groupName": "{{depName}}"
-    }
+      "groupName": "test",
+    },
   ]
 }
