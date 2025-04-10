@@ -12,7 +12,7 @@
       ],
       "datasourceTemplate": "docker",
       "depNameTemplate": "{{{depName}}}",
-      "autoReplaceStringTemplate": "uses: docker://{{{depName}}}@{{{newDigest}}}{{#if newValue}} # {{{newValue}}}{{/if}}"
+      "autoReplaceStringTemplate": "uses: docker://{{{depName}}}@{{{newDigest}}}"
     },
   ],
 }
