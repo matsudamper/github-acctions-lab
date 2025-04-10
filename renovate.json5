@@ -4,18 +4,15 @@
   ],
   "packageRules": [
     {
-      "matchDatasources": [
-        "docker"
-      ],
-      "pinDigests": true,
+      "matchDatasources": ["docker"],
+      "matchUpdateTypes": ["digest"],
+      "enabled": true,
+      "pinDigests": true
     },
     {
-      "matchFileNames": ["\\.github/workflows/.*\\.ya?ml$"],
+      "matchDatasources": ["docker"],
       "matchUpdateTypes": ["digest"],
-      "matchDatasources": [
-        "docker"
-      ],
-      "enabled": false,
+      "enabled": false
     }
   ],
   "customManagers": [
