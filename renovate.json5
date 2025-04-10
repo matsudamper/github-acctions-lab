@@ -24,4 +24,5 @@
       "depNameTemplate": "{{{depName}}}",
       "autoReplaceStringTemplate": "FROM {{{depName}}}@{{{newDigest}}} # {{{newValue}}}",
     }
+  ]
 }
