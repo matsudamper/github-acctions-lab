@@ -22,7 +22,7 @@
       "datasourceTemplate": "docker",
       "depNameTemplate": "{{{depName}}}",
       "versioningTemplate": "semver",
-      "autoReplaceStringTemplate": "uses: docker://{{{depName}}}@sha256:{{{digest}}} # {{{newValue}}}",
+      "autoReplaceStringTemplate": "uses: docker://{{{depName}}}@sha256:{{{newDigest}}} # {{{newValue}}}",
     }
   ]
 }
