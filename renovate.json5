@@ -25,4 +25,11 @@
       "autoReplaceStringTemplate": "FROM {{{depName}}}@{{{newDigest}}} # {{{newValue}}}",
     }
   ],
+  "packageRules": [
+    {
+      "matchManagers": ["regex", "github-actions", "dockerfile"],
+      "matchPackageNames": ["*"],
+      "groupName": "{{depName}}",
+    },
+  ]
 }
