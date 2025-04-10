@@ -4,18 +4,6 @@
     "docker:pinDigests",
   ],
   "customManagers": [
-    // 全部に適用する
-    {
-      "customType": "regex",
-      "fileMatch": ["\\.github/workflows/.*\\.ya?ml$"],
-      "matchStrings": [
-        "uses:\\s*docker://(?<depName>[^@\\s]+)@sha256:(?<digest>[0-9a-f]{64})(?:\\s*#\\s*(?<currentValue>\\S+))?"
-      ],
-      "datasourceTemplate": "docker",
-      "depNameTemplate": "{{{depName}}}",
-      "autoReplaceStringTemplate": "uses: docker://{{{depName}}}@{{{newDigest}}} # {{{newValue}}}",
-    },
-
     // 特定の依存に対して更新を行う
     {
       "customType": "regex",
@@ -39,9 +27,9 @@
     },
   ],
   "packageRules": [
+    // swiftlintはcustomManagerで更新するので無効化
     {
       "matchDatasources": ["docker"],
-      "matchManagers": ["github-actions", "dockerfile"],
       "matchDepNames": ["ghcr.io/realm/swiftlint"],
       "enabled": false
     }
