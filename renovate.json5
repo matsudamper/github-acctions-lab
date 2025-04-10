@@ -23,11 +23,4 @@
       "autoReplaceStringTemplate": "uses: docker://{{{depName}}}@{{{newDigest}}} # {{{newValue}}}",
     }
   ],
-  "packageRules": [
-    {
-      "matchDatasources": ["docker"],
-      "matchUpdateTypes": ["digest"],
-      "enabled": false
-    }
-  ],
 }
