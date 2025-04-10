@@ -14,5 +14,12 @@
       "depNameTemplate": "{{{depName}}}",
       "autoReplaceStringTemplate": "uses: docker://{{{depName}}}@{{{newDigest}}} # {{{newValue}}}",
     }
+  ],
+  "packageRules": [
+    {
+      "matchManagers": ["regex", "dockerfile", "docker"],
+      "matchPackageNames": ["*"],
+      "groupName": "{{depName}}"
+    }
   ]
 }
