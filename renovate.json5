@@ -26,6 +26,16 @@
       "datasourceTemplate": "docker",
       "depNameTemplate": "{{{depName}}}",
       "autoReplaceStringTemplate": "uses: docker://{{{depName}}}@{{{newDigest}}} # {{{newValue}}}",
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["Dockerfile"],
+      "matchStrings": [
+        "FROM\\s*(?<depName>[^@\\s]+)@sha256:(?<digest>[0-9a-f]{64})(?:\\s*#\\s*(?<currentValue>\\S+))?"
+      ],
+      "datasourceTemplate": "docker",
+      "depNameTemplate": "{{{depName}}}",
+      "autoReplaceStringTemplate": "FROM: docker://{{{depName}}}@{{{newDigest}}} # {{{newValue}}}",
     }
   ]
 }
