@@ -4,7 +4,6 @@
     "docker:pinDigests",
   ],
   "customManagers": [
-    // 全部に適用する
     {
       "customType": "regex",
       "fileMatch": ["\\.github/workflows/.*\\.ya?ml$"],
