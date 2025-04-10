@@ -1,9 +1,12 @@
 {
-  "extends": [
-    "config:recommended",
-    "helpers:pinGitHubActionDigests",
-  ],
+  "extends": [],
   "packageRules": [
+    {
+      "matchDatasources": [
+        "docker"
+      ],
+      "pinDigests": true
+    },
     {
       "matchFileNames": ["\\.github/workflows/.*\\.ya?ml$"],
       "matchUpdateTypes": ["digest"],
