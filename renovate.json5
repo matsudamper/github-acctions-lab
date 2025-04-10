@@ -7,12 +7,15 @@
       "matchDatasources": [
         "docker"
       ],
-      "pinDigests": true
+      "pinDigests": true,
     },
     {
       "matchFileNames": ["\\.github/workflows/.*\\.ya?ml$"],
       "matchUpdateTypes": ["digest"],
-      "enabled": false
+      "matchDatasources": [
+        "docker"
+      ],
+      "enabled": false,
     }
   ],
   "customManagers": [
