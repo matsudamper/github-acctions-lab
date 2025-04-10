@@ -4,6 +4,15 @@
     "docker:pinDigests",
     "helpers:pinGitHubActionDigests",
   ],
+  "packageRules": [
+    {
+      "matchManagers": ["github-actions"],
+      "matchDatasources": ["docker"],
+      "pinDigests": true,
+      // digest 更新用ブランチは “docker-digest/…” プレフィックスに
+      "branchName": "{{{branchPrefix}}}docker-digest/{{{depNameSanitized}}}"
+    }
+  ],
   "customManagers": [
     {
       "customType": "github-actions-docker",
@@ -15,7 +24,6 @@
       "depNameTemplate": "{{{depName}}}",
       "versioningTemplate": "semver",
       "autoReplaceStringTemplate": "uses: docker://{{{depName}}}@sha256:{{{digest}}} # {{{newValue}}}",
-      "branchName": "{{{branchPrefix}}}github-actions-docker-comment/{{{depNameSanitized}}}-{{{newValue}}}"
     }
   ]
 }
