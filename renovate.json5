@@ -1,15 +1,7 @@
 {
   "extends": [
     "config:recommended",
-  ],
-  "packageRules": [
-    // pinDigests=trueでnewDigestの情報を取れるようにし、digestでの更新自体はオフにする
-    {
-      "matchDatasources": ["docker"],
-      "matchUpdateTypes": ["digest"],
-      "enabled": true,
-      "pinDigests": true
-    }
+    "docker:pinDigests",
   ],
   "customManagers": [
     {
@@ -22,5 +14,5 @@
       "depNameTemplate": "{{{depName}}}",
       "autoReplaceStringTemplate": "uses: docker://{{{depName}}}@{{{newDigest}}} # {{{newValue}}}",
     }
-  ],
+  ]
 }
