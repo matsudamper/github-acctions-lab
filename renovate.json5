@@ -15,28 +15,6 @@
       "depNameTemplate": "{{{depName}}}",
       "autoReplaceStringTemplate": "uses: docker://{{{depName}}}@{{{newDigest}}} # {{{newValue}}}",
     },
-
-    // 特定の依存に対して更新を行う
-    {
-      "customType": "regex",
-      "fileMatch": ["\\.github/workflows/.*\\.ya?ml$"],
-      "matchStrings": [
-        "uses:\\s*docker://(?<depName>ghcr\.io/realm/swiftlint)@sha256:(?<digest>[0-9a-f]{64})(?:\\s*#\\s*(?<currentValue>\\S+))?"
-      ],
-      "datasourceTemplate": "docker",
-      "depNameTemplate": "{{{depName}}}",
-      "autoReplaceStringTemplate": "uses: docker://{{{depName}}}@{{{newDigest}}} # {{{newValue}}}",
-    },
-    {
-      "customType": "regex",
-      "fileMatch": ["Dockerfile"],
-      "matchStrings": [
-        "FROM\\s* (?<depName>ghcr\.io/realm/swiftlint)@sha256:(?<digest>[0-9a-f]{64})(?:\\s*#\\s*(?<currentValue>\\S+))?"
-      ],
-      "datasourceTemplate": "docker",
-      "depNameTemplate": "{{{depName}}}",
-      "autoReplaceStringTemplate": "FROM {{{depName}}}@{{{newDigest}}} # {{{newValue}}}",
-    }
   ],
   "packageRules": [
     {
