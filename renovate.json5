@@ -5,8 +5,7 @@
   ],
   "packageRules": [
     {
-      "matchDatasources": ["docker"],
-      "matchManagers": ["github-actions"],
+      "matchFileNames": ["\\.github/workflows/.*\\.ya?ml$"],
       "matchUpdateTypes": ["digest"],
       "enabled": false
     }
