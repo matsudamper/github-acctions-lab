@@ -13,7 +13,7 @@
       ],
       "datasourceTemplate": "docker",
       "depNameTemplate": "{{{depName}}}",
-      "autoReplaceStringTemplate": "uses: docker://{{{depName}}}@sha256:{{{newDigest}}} # {{{newValue}}}",
+      "autoReplaceStringTemplate": "uses: docker://{{{depName}}}@{{{newDigest}}} # {{{newValue}}}",
     }
   ]
 }
