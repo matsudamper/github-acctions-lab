@@ -1,3 +1,3 @@
-FROM ghcr.io/realm/swiftlint@sha256:b500fb49bbc7b752575cbb7124311686ce1055393b9e45cb63380ace67a58116 # 0.58.2
+FROM ghcr.io/realm/swiftlint@sha256:b09d61ba7f860b23732dd2852740deab10252e54225ed489ecbfcf520fff5384 # 0.58.2
 
-FROM ghcr.io/realm/swiftlint@sha256:b500fb49bbc7b752575cbb7124311686ce1055393b9e45cb63380ace67a58116
+FROM ghcr.io/realm/swiftlint@sha256:b09d61ba7f860b23732dd2852740deab10252e54225ed489ecbfcf520fff5384
